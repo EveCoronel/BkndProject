@@ -22,8 +22,8 @@ app.get('*', (req, res) => {
 
 const serverConnected = app.listen(PORT, () => {
     if (Object.keys(ASYNC_DATASOURCE).includes(config.DATASOURCE || "")) {
-        ASYNC_DATASOURCE[config.DATASOURCE].conect().then(() => {
-            console.log('Connected to' + config.DATASOURCE + 'sucessfully')
+        ASYNC_DATASOURCE[config.DATASOURCE].connect().then(() => {
+            console.log('Connected to ' + config.DATASOURCE + ' sucessfully')
         })
     }
     console.log(`Server is up and running`)

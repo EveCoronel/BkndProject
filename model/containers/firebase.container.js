@@ -3,19 +3,24 @@ const admin = require('firebase-admin');
 const { getFirestore } = require('firebase-admin/firestore');
 const dbConfig = require('../../db/db.config');
 
+admin.initializeApp({
+  credential: admin.credential.cert(dbConfig.firebase.credentials)
+})
+console.log('Firebase connected sucessfully!')
+
 class FirebaseContainer {
   constructor(collection) {
-    FirebaseContainer.connect()
+    /* FirebaseContainer.connect() */
     const db = getFirestore();
     this.query = db.collection(collection);
   }
 
-  static async connect() {
+  /* static async connect() {
     admin.initializeApp({
       credential: admin.credential.cert(dbConfig.firebase.credentials)
     })
     console.log('Firebase connected sucessfully!')
-  }
+  } */
 
   async getAll() {
     const docRef = await this.query.get();
@@ -54,6 +59,10 @@ class FirebaseContainer {
 
   async delete(id) {
     const docRef = this.query.doc(id);
+    if (!docRef) {
+      const message = `Resource with id ${id} does not exist in our records`;
+      throw new HttpError(HTTP_STATUS.NOT_FOUND, message);
+    }
     return await docRef.delete();
   }
 }

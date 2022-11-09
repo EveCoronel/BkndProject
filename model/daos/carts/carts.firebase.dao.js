@@ -1,3 +1,5 @@
+const { HTTP_STATUS } = require('../../../constants/api.constants');
+const { HttpError } = require('../../../utils/api.utils');
 const FirebaseContainer = require('../../containers/firebase.container')
 
 class DaoCartsFirebase extends FirebaseContainer {
@@ -8,12 +10,12 @@ class DaoCartsFirebase extends FirebaseContainer {
 
     async getProductsInCart(id) {
         const docRef = this.query.doc(id);
-        if (!docRef) {
+        const document = await docRef.get();
+        let cart = document.data();
+        if (!cart) {
             const message = `Resource with id ${id} does not exist in our records`;
             throw new HttpError(HTTP_STATUS.NOT_FOUND, message);
         }
-        const document = await docRef.get();
-        let cart = document.data();
         return cart.products
     }
 
