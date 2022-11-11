@@ -1,7 +1,9 @@
 // @ts-nocheck
 const admin = require('firebase-admin');
 const { getFirestore } = require('firebase-admin/firestore');
+const { HTTP_STATUS } = require('../../constants/api.constants');
 const dbConfig = require('../../db/db.config');
+const { HttpError } = require('../../utils/api.utils');
 
 admin.initializeApp({
   credential: admin.credential.cert(dbConfig.firebase.credentials)
@@ -10,17 +12,9 @@ console.log('Firebase connected sucessfully!')
 
 class FirebaseContainer {
   constructor(collection) {
-    /* FirebaseContainer.connect() */
     const db = getFirestore();
     this.query = db.collection(collection);
   }
-
-  /* static async connect() {
-    admin.initializeApp({
-      credential: admin.credential.cert(dbConfig.firebase.credentials)
-    })
-    console.log('Firebase connected sucessfully!')
-  } */
 
   async getAll() {
     const docRef = await this.query.get();
@@ -34,12 +28,13 @@ class FirebaseContainer {
   }
 
   async getById(id) {
+    console.log(id)
     const docRef = this.query.doc(id);
-    if (!docRef) {
-      const message = `Resource with id ${id} does not exist in our records`;
-      throw new HttpError(HTTP_STATUS.NOT_FOUND, message);
-    }
     const document = await docRef.get();
+    if (!document.data()) {
+      const message = `Resource with id ${id} does not exist in our records`;
+      throw new HttpError(HTTP_STATUS.NOT_FOUND, message);/* "HOLA" */
+    }
     return document.data();
   }
 
@@ -50,16 +45,18 @@ class FirebaseContainer {
 
   async update(id, item) {
     const docRef = this.query.doc(id);
-    if (!docRef) {
+    const documentRef = await docRef.get();
+    if (!documentRef.data()) {
       const message = `Resource with id ${id} does not exist in our records`;
-      throw new HttpError(HTTP_STATUS.NOT_FOUND, message);
+      throw new HttpError(HTTP_STATUS.NOT_FOUND, message); 
     }
     return await docRef.update(item);
   }
 
   async delete(id) {
     const docRef = this.query.doc(id);
-    if (!docRef) {
+    const documentRef = await docRef.get();
+    if (!documentRef.data()) {
       const message = `Resource with id ${id} does not exist in our records`;
       throw new HttpError(HTTP_STATUS.NOT_FOUND, message);
     }

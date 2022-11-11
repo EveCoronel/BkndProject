@@ -31,7 +31,7 @@ class CartsController {
 
     async saveCart(req, res, next) {
         try {
-            const newCart = await cartsDao.save(req.body);
+            const newCart = await cartsDao.createCart(req.body);
             const response = successResponse(newCart);
             res.status(HTTP_STATUS.CREATED).json(response);
         }
@@ -41,9 +41,9 @@ class CartsController {
     }
 
     async updateCart(req, res, next) {
-        const { id } = req.params;
+        const { id, id_prod } = req.params;
         try {
-            const updateCart = await cartsDao.update(id, req.body);
+            const updateCart = await cartsDao.addProduct(id, id_prod);
             const response = successResponse(updateCart);
             res.status(HTTP_STATUS.OK).json(response);
         }
@@ -68,6 +68,19 @@ class CartsController {
         const { id } = req.params;
         try {
             const productsInCart = await cartsDao.getProductsInCart(id);
+            const response = successResponse(productsInCart);
+            res.status(HTTP_STATUS.OK).json(response);
+        }
+        catch (error) {
+            next(error);
+        }
+
+    }
+
+    async deleteProductById(req, res, next) {
+        const { id } = req.params;
+        try {
+            const productsInCart = await cartsDao.deleteProductById(id);
             const response = successResponse(productsInCart);
             res.status(HTTP_STATUS.OK).json(response);
         }

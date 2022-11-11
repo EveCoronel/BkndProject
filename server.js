@@ -1,6 +1,8 @@
 const express = require('express');
 const config = require('./config');
 const apiRoutes = require('./routers/app.routers')
+const errorMiddleware = require('./middlewares/error.middleware')
+
 
 const PORT = process.env.PORT || 8080;
 const app = express()
@@ -29,6 +31,7 @@ const serverConnected = app.listen(PORT, () => {
     console.log(`Server is up and running`)
 })
 
-serverConnected.on('error', (error) => {
+app.use(errorMiddleware)
+/* serverConnected.on('error', (error) => {
     console.log(error.message)
-})
+}) */

@@ -1,5 +1,5 @@
 const { HTTP_STATUS } = require("../constants/api.constants");
-const { successResponse } = require("../utils/api.utils");
+const { successResponse, errorResponse } = require("../utils/api.utils");
 const { ProductsDao } = require('../model/daos/app.daos')
 
 const productsDao = new ProductsDao();
