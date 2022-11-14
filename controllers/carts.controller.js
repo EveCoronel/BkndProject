@@ -78,9 +78,9 @@ class CartsController {
     }
 
     async deleteProductById(req, res, next) {
-        const { id } = req.params;
+        const { id, id_prod } = req.params;
         try {
-            const productsInCart = await cartsDao.deleteProductById(id);
+            const productsInCart = await cartsDao.deleteProductById(id, id_prod);
             const response = successResponse(productsInCart);
             res.status(HTTP_STATUS.OK).json(response);
         }

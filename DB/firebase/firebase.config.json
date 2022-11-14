@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "optic-ecommerce",
+  "private_key_id": "9347ebe3c171bf440db8e79571cfd1cfe9cd28c6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDCJQ2xhW/hVB4F\nixu4XrkLO4MFrfgmBSAQrsa+ArChXi2BD/Cw6Xokk2P3BBErBMeUyOUtygAe04sA\nZt0rCnZdkVbxXGUqc7AySoF26M8j+bspDw6NDbV3zm30kIFS1Q4stKuhcpcjEwTr\nmebl6GWHfShgC/HBkDEcFgISY2AG2cxnZKRMDOdH/V6odTX12FtXaG4ax+/A2E6E\nM5rf8fJdHTpYK0FF2cx0yZWBs8IBbOZyQPa3aSVqAfDkM9eFakXDUu5dP24UDAYK\nAyCsMTHC/8jWi5gwTyo9FvMRpGxbaPc732GQDHYMMqDUWvjUi6BzMGGZkedyEWfN\nQUBxcIQRAgMBAAECggEABiygAByOh5PBhascJVOr3mHU46YZ/XmNwMISM4JJ5EPm\nvhNH9BRkzEt8syMnuZ7ECyUNdtSVBuXy5n8e+wqw435nDbOCyyQVPzAz6Fh0mAAN\n9fsS2yULt6TyxcOfvUbl1cGkMLUAff7Rmf2RxI+MxQ+TrGRM2rtPeIVxqOyMpgMS\niQxYMEydDF1MaeRE1BrH5Z3cs+1QO4qhfMuEhw31LDQi7oDJrnUUki7JiesNHlD7\nnbSw25pke0v8dCFIsfiPAoexQ8fp5ZsnzIRdsHS9KrpAdjck6+D9o5oMhacYPQKI\nOPY1805brEhOgwxVyhVXsaGMCyDEfx6Gd1E4C7KlfQKBgQDhG8BB6+9zGQUiUo5M\neMfRd9Kw3MZeTmBzCWVs9wxRJoLdJT4qMpdJR1yVEAedIO8zUzUwSKddDiqGTtUk\n1hxvUYe3gY/haRqv3r5XOads7SVEE3LS6n6ev+nis0DolgdjzRIkffMlfh4b1Erj\n2ge2WxpAnS7qGHcaRfUOxNm01QKBgQDcyYXVOxOdo9OhTkuKd61y000cHtZIecMt\nQpykDzhyrFMMBkhbnNqo2ko+2FgI09PW9pk7a0GiUiRlv4/pR8LkppWIqdufRgEK\nDqFHu/80w78qpIAFDBjjHSoZ1Q4Sa6d/KtNkASRHim23aEyntEX54WY4fE1rG+FJ\nKCVttzCgTQKBgQCrZ6QXDf2/2DdOkSoFFJqh5uko/pKVUHykW209cUeRqw9OMIOL\nQgZsJ8hZQGFrxZ4dqKgBYfD+LEE5D2HAsL/qC1yZ4C+cZZmKfMLWS/IuQMx1b5Gp\nBCDx5BPFKNStxT9PQOElpDm2PLfUXOvBX00sD2aH+Ke2XHakLMySOFXFGQKBgQDb\nOxO0JmQU7N6wViE2Th2hXeU8XfZiot1F7NXDJgXj/+66iuaAaWDJt29vtby8jzHT\nSqvez2Ktvii8C5nnhsUj67GhsSANqCJSDTLiGu+PQitpOUyRNnDj20q5uc+uRM1d\nvXWH4IZYr0DAlEVBZQTy2Xh58Bujllx+GuoHZpZXJQKBgDgDjo5BRwgQCksCQmWy\nEQJzk+CZJMBwS7b5HZGCZreKvjvdZqE2oRsLtOzy9LJR+YEQPF5AW2Naf7W9JsDB\nwACz7BHbMUt+8XCaBi8RkrLkepEDlCZYbqSW6J3wyg6t4tIhDgZY78GV7w6IA5K0\n6aInvSWE1zwa9E3NVi0Iw/qV\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-1k94g@optic-ecommerce.iam.gserviceaccount.com",
+  "client_id": "103086402812922065185",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-1k94g%40optic-ecommerce.iam.gserviceaccount.com"
+}
