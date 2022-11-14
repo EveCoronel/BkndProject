@@ -1,17 +1,1 @@
-[
-  {
-    "id": 1,
-    "timestamp": 1665352464539,
-    "products": []
-  },
-  {
-    "id": 2,
-    "timestamp": 1665352468398,
-    "products": []
-  },
-  {
-    "id": 3,
-    "timestamp": 1665352469043,
-    "products": []
-  }
-]
+[{"id":1,"timestamp":1665352464539,"products":[]},{"id":3,"timestamp":1665352469043,"products":["6371752a265675673dc6d0866"]}]

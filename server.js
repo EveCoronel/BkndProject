@@ -9,7 +9,8 @@ const app = express()
 
 
 const ASYNC_DATASOURCE = {
-    mongo: require('./model/containers/mongo.container')
+    mongo: require('./model/containers/mongo.container'),
+    file: require('./model/containers/file.container')
 }
 
 
@@ -23,7 +24,7 @@ app.get('*', (req, res) => {
 })
 
 const serverConnected = app.listen(PORT, () => {
-    if (Object.keys(ASYNC_DATASOURCE).includes(config.DATASOURCE || "")) {
+    if (config.DATASOURCE == 'mongo') {
         ASYNC_DATASOURCE[config.DATASOURCE].connect().then(() => {
             console.log('Connected to ' + config.DATASOURCE + ' sucessfully')
         })
@@ -32,6 +33,7 @@ const serverConnected = app.listen(PORT, () => {
 })
 
 app.use(errorMiddleware)
-/* serverConnected.on('error', (error) => {
+
+serverConnected.on('error', (error) => {
     console.log(error.message)
-}) */
+})
